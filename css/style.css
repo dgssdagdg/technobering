@@ -199,19 +199,21 @@ body {
   visibility: hidden;
   opacity: 0;
 }
-.header-top-sub:hover::before, .header-top-sub:hover .header-top-sub-list {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-.header-top-sub:hover svg {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
 
+@media (min-width: 993px) {
+  .header-top-sub:hover::before, .header-top-sub:hover .header-top-sub-list {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  .header-top-sub:hover svg {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+}
 .heaer-top-link {
   font-weight: 500;
   font-size: 13px;
@@ -1521,12 +1523,6 @@ body {
   .header-top-sub::before {
     display: none;
   }
-  .header-top-sub:hover svg {
-    -webkit-transform: rotate(-90deg);
-            transform: rotate(-90deg);
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-  }
   .header-end-links {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1642,6 +1638,28 @@ body {
   .header-end-search-content {
     width: 100%;
   }
+  .menu .header-top-sub-active {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  .menu .header-top-sub-style path {
+    stroke: #F54026;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  .menu .header-top-sub-style .heaer-top-link {
+    color: #f54026 !important;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  .menu .header-top-sub-style svg {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
   .menu .header-top-nav {
     width: 100%;
     border-top: 1px solid rgba(25, 47, 124, 0.13);
@@ -1676,16 +1694,6 @@ body {
     padding: 0 19px 0 21px;
     height: 56px;
     border-bottom: 1px solid rgba(25, 47, 124, 0.13);
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-  }
-  .menu .header-top-nav .header-top-list li:hover path {
-    stroke: #F54026;
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-  }
-  .menu .header-top-nav .header-top-list li:hover .heaer-top-link {
-    color: #f54026;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
   }

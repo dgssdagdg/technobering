@@ -1,4 +1,10 @@
 document.addEventListener('click', function(event) {
+    if (event.target.closest('.header-top-sub-mini')) {
+        let headerSubMini = document.querySelector('.header-top-sub-mini');
+        let headerSubList = document.querySelector('.header-top-sub-list-min');
+        headerSubList.classList.toggle('header-top-sub-active');
+        headerSubMini.classList.toggle('header-top-sub-style');
+    }
     let catalogs = document.querySelector('.catalog-two-one');
     if (event.target.closest('.c-o-one')) {
         catalogs.classList.toggle('c-one')
