@@ -778,7 +778,7 @@ body {
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
-  overflow-y: auto;
+  overflow: hidden;
   padding-top: 83px;
 }
 
@@ -976,6 +976,11 @@ body {
   margin-bottom: 20px;
 }
 
+.menu-container {
+  overflow-y: auto;
+  height: 100%;
+}
+
 .pop-up {
   position: absolute;
   width: 100%;
@@ -1083,6 +1088,10 @@ body {
   margin-bottom: 23px;
 }
 
+.pop-up-city-two-close {
+  cursor: pointer;
+}
+
 .pop-up-city-two-search {
   margin-bottom: 12px;
   display: -webkit-box;
@@ -1158,13 +1167,18 @@ body {
   color: #FFFFFF;
 }
 
-/* прячем input checkbox */
-input[type=checkbox] {
+.cehckbox-one,
+.cehckbox-two {
+  position: relative;
+  /* стили для метки */
+  /* формируем внешний вид чекбокса в псевдоэлементе before */
+}
+.cehckbox-one input[type=checkbox],
+.cehckbox-two input[type=checkbox] {
   display: none;
 }
-
-/* стили для метки */
-label {
+.cehckbox-one label,
+.cehckbox-two label {
   cursor: default;
   position: relative;
   font-weight: 500;
@@ -1177,12 +1191,12 @@ label {
   display: -ms-flexbox;
   display: flex;
 }
-label span {
+.cehckbox-one label a,
+.cehckbox-two label a {
   color: #F54026;
 }
-
-/* формируем внешний вид чекбокса в псевдоэлементе before */
-label:before {
+.cehckbox-one label:before,
+.cehckbox-two label:before {
   content: " ";
   color: #000;
   display: inline-block;
@@ -1199,21 +1213,18 @@ label:before {
      border-image: initial;
   vertical-align: middle;
 }
-
-/* вариации внешнего вида в зав-ти от статуса checkbox */
-/* checked */
-input:checked + label::after {
+.cehckbox-one input:checked + label::after,
+.cehckbox-two input:checked + label::after {
   width: 18px;
   height: 14px;
   content: "";
-  left: 7px;
+  left: 4px;
   top: 10px;
   position: absolute;
   background: url(../img/check.png) no-repeat center;
 }
-
-/* disabled */
-input:disabled + label:before {
+.cehckbox-one input:disabled + label:before,
+.cehckbox-two input:disabled + label:before {
   background: #eee;
   color: #aaa;
 }
@@ -1533,7 +1544,8 @@ input:disabled + label:before {
     opacity: 1;
     background-color: #fff;
     padding-top: 83px;
-    min-height: 150%;
+    height: 100%;
+    overflow: hidden;
     -webkit-transform: translateX(130%);
             transform: translateX(130%);
   }
@@ -1559,6 +1571,8 @@ input:disabled + label:before {
   .menu .catalog-one {
     width: 100%;
     background-color: #fff;
+    height: 100%;
+    overflow-y: auto;
   }
   .menu .catalog-one .catalog-one-item {
     -webkit-box-pack: justify;
@@ -1573,12 +1587,13 @@ input:disabled + label:before {
     z-index: 3;
     -webkit-transform: translateX(130%);
             transform: translateX(130%);
-    min-height: 100%;
     margin-top: 0;
     padding: 0;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     display: block !important;
+    height: 100%;
+    overflow-y: auto;
   }
   .menu .catalog-two .catalog-two-item {
     -webkit-box-pack: justify;
@@ -1588,12 +1603,13 @@ input:disabled + label:before {
   }
   .menu .catalog-three {
     width: 100%;
+    height: 100%;
+    overflow-y: auto;
     position: absolute;
     background-color: #fff;
     margin-top: 0;
     padding: 0;
     background-color: #fff;
-    min-height: 100%;
     z-index: 5;
     display: block !important;
     -webkit-transform: translateX(130%);
@@ -1693,7 +1709,7 @@ input:disabled + label:before {
             justify-content: center;
   }
   .pop-up-city {
-    padding: 32px 20px 37px 20px;
+    padding: 22px 20px 27px 20px;
   }
   .pop-up-city-two-name {
     font-size: 21px;

@@ -1,11 +1,28 @@
 document.addEventListener('click', function(event) {
+    let catalogs = document.querySelector('.catalog-two-one');
     if (event.target.closest('.c-o-one')) {
-        let catalog = document.querySelector('.catalog-two');
-        catalog.classList.toggle('c-one')
+        catalogs.classList.toggle('c-one')
+    } else if (!event.target.closest('.c-o-one') && event.target.closest('.catalog-one-item')) {
+        catalogs.classList.remove('c-one')
     }
-    if (event.target.closest('.catalog-two-item')) {
-        let catalog = document.querySelector('.catalog-three');
-        catalog.classList.toggle('catalog-two-active')
+    let catalogTwo = document.querySelector('.catalog-two-two');
+    if (event.target.closest('.c-o-two')) {
+        catalogTwo.classList.toggle('c-one')
+    } else if (!event.target.closest('.c-o-two') && event.target.closest('.catalog-one-item')) {
+        catalogTwo.classList.remove('c-one')
+    }
+
+    let catalogTOne = document.querySelector('.catalog-three-one');
+    if (event.target.closest('.c-c-one')) {
+        catalogTOne.classList.toggle('catalog-two-active')
+    }else if (!event.target.closest('.c-o-one') && event.target.closest('.catalog-two-item')) {
+        catalogTOne.classList.remove('catalog-two-active')
+    }
+    let catalogTTwo = document.querySelector('.catalog-three-two');
+    if (event.target.closest('.c-c-two')) {
+        catalogTTwo.classList.toggle('catalog-two-active')
+    }else if (!event.target.closest('.c-o-two') && event.target.closest('.catalog-two-item')) {
+        catalogTTwo.classList.remove('catalog-two-active')
     }
 
     let city = document.querySelector('.city');
@@ -93,6 +110,33 @@ document.addEventListener('click', function(event) {
         searchItems.classList.remove('header-end-search-active')
     }
 })
+document.addEventListener('mouseover', function(event) {
+    let catalog = document.querySelector('.catalog-two-one');
+    if (event.target.closest('.c-o-one')) {
+        catalog.classList.toggle('c-one')
+    } else if (!event.target.closest('.c-o-one') && event.target.closest('.catalog-one-item')) {
+        catalog.classList.remove('c-one')
+    }
+    let catalogTwo = document.querySelector('.catalog-two-two');
+    if (event.target.closest('.c-o-two')) {
+        catalogTwo.classList.toggle('c-one')
+    } else if (!event.target.closest('.c-o-two') && event.target.closest('.catalog-one-item')) {
+        catalogTwo.classList.remove('c-one')
+    }
+
+    let catalogTOne = document.querySelector('.catalog-three-one');
+    if (event.target.closest('.c-c-one')) {
+        catalogTOne.classList.toggle('catalog-two-active')
+    }else if (!event.target.closest('.c-o-one') && event.target.closest('.catalog-two-item')) {
+        catalogTOne.classList.remove('catalog-two-active')
+    }
+    let catalogTTwo = document.querySelector('.catalog-three-two');
+    if (event.target.closest('.c-c-two')) {
+        catalogTTwo.classList.toggle('catalog-two-active')
+    }else if (!event.target.closest('.c-o-two') && event.target.closest('.catalog-two-item')) {
+        catalogTTwo.classList.remove('catalog-two-active')
+    }
+}) 
 let menuBtn = document.querySelector('.menu-btn');
 let menu = document.querySelector('.menu');
 menuBtn.addEventListener('click', function(){
